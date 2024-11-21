@@ -10,6 +10,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.pertemuan8.model.Mahasiswa
+import com.example.pertemuan8.model.RencanaStudi
 import com.example.pertemuan8.ui.theme.view.SplashView
 import com.example.pertemuan8.ui.theme.view.screen.MahasiswaFormView
 import com.example.pertemuan8.ui.theme.view.screen.RencanaStudyView
@@ -24,4 +26,12 @@ enum class Halaman {
     Peminatan,
     TampilKrs
 }
+
+@Composable
+fun MahasiswaApp(
+    modifier: Modifier = Modifier,
+    mahasiswaViewModel: MahasiswaViewModel = viewModel(),
+    RencanaStudyViewModel: RencanaStudyViewModel = viewModel(),
+    navController: NavHostController = rememberNavController()
+)
 
