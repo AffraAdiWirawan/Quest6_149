@@ -34,4 +34,25 @@ fun MahasiswaApp(
     RencanaStudyViewModel: RencanaStudyViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 )
+{
+    val (mahasiswaUiState, rencanaStudiUiState) = pair(mahasiswaViewModel, RencanaStudyViewModel)
+
+    NavHost(
+        navController = navController,
+        startDestination = Halaman.Splash.name,
+        modifier = modifier.padding()
+    )
+
+    }
+}
+
+@Composable
+private fun pair(
+    mahasiswaViewModel: MahasiswaViewModel,
+    RencanaStudyViewModel: RencanaStudyViewModel
+): Pair<Mahasiswa, RencanaStudi> {
+    val mahasiswaUiState = mahasiswaViewModel.mahasiswaUiState.collectAsState().value
+    val rencanaStudiUiState = RencanaStudyViewModel.krsStateUi.collectAsState().value
+    return Pair(mahasiswaUiState, rencanaStudiUiState)
+}
 
