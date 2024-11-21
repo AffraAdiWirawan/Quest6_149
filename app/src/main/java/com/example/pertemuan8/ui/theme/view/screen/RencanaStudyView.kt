@@ -128,7 +128,28 @@ fun RencanaStudyView(
 
                 Spacer(modifier = Modifier.padding(8.dp))
 
-               
+                DynamicSelectedField(
+                    selectedValue = chosenDropdown,
+                    options = MataKuliah.options,
+                    label = "Mata Kuliah",
+                    onValueChangedEvent = {
+                        chosenDropdown = it
+                    }
+                )
+
+                Spacer(modifier = Modifier.padding(8.dp))
+                HorizontalDivider()
+                Spacer(modifier = Modifier.padding(8.dp))
+
+                Text(
+                    text = "Silahkan pilih Kelas dari mata kuliah yang anda inginkan",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Light
+                )
+
+                Spacer(modifier = Modifier.padding(8.dp))
+
+                
         }
     }
 }
