@@ -42,17 +42,15 @@ fun MahasiswaApp(
         startDestination = Halaman.Splash.name,
         modifier = modifier.padding()
     )
+    {
+        composable(
+            route = Halaman.Splash.name
+        ){
+            SplashView (
+                onMulaiButton = {
+                    navController.navigate(Halaman.Mahasiswa.name)
+                })
+        }
 
-    }
-}
 
-@Composable
-private fun pair(
-    mahasiswaViewModel: MahasiswaViewModel,
-    RencanaStudyViewModel: RencanaStudyViewModel
-): Pair<Mahasiswa, RencanaStudi> {
-    val mahasiswaUiState = mahasiswaViewModel.mahasiswaUiState.collectAsState().value
-    val rencanaStudiUiState = RencanaStudyViewModel.krsStateUi.collectAsState().value
-    return Pair(mahasiswaUiState, rencanaStudiUiState)
-}
 
