@@ -185,7 +185,20 @@ fun RencanaStudyView(
                 }
 
                 Spacer(modifier = Modifier.padding(8.dp))
+                Row (
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Button(onClick = {onbackbuttonClicked()}) {
+                        Text(text = "Kembali")
+                    }
 
+                    Button(onClick = {
+                        onSubmitButton(listData)
+                    }, enabled = checked) {
+                        Text(text = "Berikutnya")
+                    }
+                }
 
             }
         }
