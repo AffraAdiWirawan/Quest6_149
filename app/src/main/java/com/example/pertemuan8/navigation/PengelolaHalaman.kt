@@ -87,7 +87,15 @@ fun MahasiswaApp(
     }
 }
 
-
+@Composable
+private fun pair(
+    mahasiswaViewModel: MahasiswaViewModel,
+    RencanaStudyViewModel: RencanaStudyViewModel
+): Pair<Mahasiswa, RencanaStudi> {
+    val mahasiswaUiState = mahasiswaViewModel.mahasiswaUiState.collectAsState().value
+    val rencanaStudiUiState = RencanaStudyViewModel.krsStateUi.collectAsState().value
+    return Pair(mahasiswaUiState, rencanaStudiUiState)
+}
 
 
 
