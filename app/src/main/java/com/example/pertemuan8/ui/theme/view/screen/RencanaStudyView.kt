@@ -62,5 +62,45 @@ fun RencanaStudyView(
         modifier = Modifier
             .fillMaxSize()
             .background(color = colorResource(id = R.color.Primary))
-    )
+    ){
+        Row (modifier = Modifier
+            .fillMaxWidth()
+            .padding(40.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ){
+            Image(
+                painter = painterResource(
+                    id = R.drawable.umy
+                ),
+                contentDescription = ""
+            )
+
+            Spacer(modifier = Modifier.padding(start = 30.dp))
+
+            Column (modifier = Modifier.weight(1f)) {
+                Text(
+                    text = mahasiswa.nama,
+                    color = Color.White,
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold
+                )
+
+                Text(
+                    text = mahasiswa.nim,
+                    color = Color.White,
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+            Box{
+                Icon(
+                    imageVector = Icons.Filled.Notifications,
+                    contentDescription = "",
+                    tint =  Color.White
+                )
+            }
+        }
+
+
+    }
 }
